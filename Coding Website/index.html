@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dev-Nexus | Architect Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+
+
+
+
+
+
+    
+   <nav class="navbar">
+    <div class="logo-main"><a href="#" class="logo">Dev-Nexus</a></div>
+    <div class="nav-links">
+        <a href="/">Dashboard</a>
+        <a href="/skills">Skills Registry</a>
+        <a href="/vault">Code Vault</a>
+        <a href="/sandbox">Sandbox</a>
+    </div>
+    <button id="theme-toggle">Theme</button>
+</nav>
+
+
+
+
+<main class="main-content" id="content-area">
+    <section class="portal-grid" id="main-view">
+        <div class="portal-card" onclick="loadModule('skills')">
+            <h3>Skills Registry</h3>
+        </div>
+        <div class="portal-card" onclick="loadModule('vault')">
+            <h3>Code Vault</h3>
+        </div>
+    </section>
+</main>
+
+
+
+
+
+<section class="editor-container">
+    <div class="editor-header">
+        <span class="dot red"></span>
+        <span class="dot yellow"></span>
+        <span class="dot green"></span>
+        <span class="filename">main.py</span>
+    </div>
+    <textarea id="code-editor" spellcheck="false" placeholder="# Write your code here..."></textarea>
+    <button onclick="runCode()" class="run-btn">Run Code</button>
+</section>
+
+
+
+
+
+
+
+
+    <script src="script.js"></script>
+</body>
+</html> 

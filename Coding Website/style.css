@@ -1,0 +1,134 @@
+:root {
+  --bg-color: #0f172a;
+  --text-color: #ffffff;
+}
+
+.light-theme {
+  --bg-color: #f1f5f9;
+  --text-color: #0f172a;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: 0.3s;
+  font-family: sans-serif;
+  margin: 0;
+}
+
+.logo {
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.navbar {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+}
+
+.nav-links a {
+  color: var(--text-color);
+  text-decoration: none;
+  margin-right: 20px;
+  font-weight: 500;
+}
+
+.portal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 50px;
+}
+
+.portal-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 15px;
+  text-decoration: none;
+  color: var(--text-color);
+  transition: 0.3s;
+}
+
+.portal-card:hover {
+  background: var(--accent, #d7044e);
+  transform: translateY(-10px);
+}
+
+#theme-toggle {
+  background: transparent;
+  border: 1px solid var(--text-color);
+  color: var(--text-color);
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+#theme-toggle:hover {
+  background: var(--text-color);
+  color: var(--bg-color);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+#theme-toggle:active {
+  transform: scale(0.95);
+}
+
+
+
+
+
+
+
+
+
+.editor-container {
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
+    padding: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+    max-width: 800px;
+}
+
+.editor-header {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.dot { width: 12px; height: 12px; border-radius: 50%; }
+.red { background: #ff5f56; }
+.yellow { background: #ffbd2e; }
+.green { background: #27c93f; }
+
+#code-editor {
+    width: 100%;
+    height: 300px;
+    background: transparent;
+    border: none;
+    color: #4ade80; /* Code green color */
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 14px;
+    resize: none;
+    outline: none;
+}
+
+.run-btn {
+    background: #4ade80;
+    color: #000;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
