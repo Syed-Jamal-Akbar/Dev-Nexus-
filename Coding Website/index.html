@@ -1,65 +1,92 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Dev-Nexus | Architect Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev-Nexus | Coding Website</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="dark-theme">
-
-
-
-
-
-
-    
-   <nav class="navbar">
-    <div class="logo-main"><a href="#" class="logo">Dev-Nexus</a></div>
-    <div class="nav-links">
-        <a href="/">Dashboard</a>
-        <a href="/skills">Skills Registry</a>
-        <a href="/vault">Code Vault</a>
-        <a href="/sandbox">Sandbox</a>
-    </div>
-    <button id="theme-toggle">Theme</button>
-</nav>
-
-
-
-
-<main class="main-content" id="content-area">
-    <section class="portal-grid" id="main-view">
-        <div class="portal-card" onclick="loadModule('skills')">
-            <h3>Skills Registry</h3>
+    <header class="navbar">
+        <a href="#" class="logo">Dev-Nexus</a>
+        <nav class="nav-links">
+            <a href="#" data-module="home" class="active">Home</a>
+            <a href="#" data-module="skills">Skills</a>
+            <a href="#" data-module="vault">Vault</a>
+            <a href="#" data-module="sandbox">Sandbox</a>
+        </nav>
+        <div class="search-menu">
+            <button class="search-toggle" aria-label="Open search">&#x1F50D;</button>
+            <div class="search-panel">
+                <input id="nav-search" type="search" placeholder="Search modules..." aria-label="Search modules">
+                <ul id="search-results" class="search-results"></ul>
+            </div>
         </div>
-        <div class="portal-card" onclick="loadModule('vault')">
-            <h3>Code Vault</h3>
-        </div>
-    </section>
-</main>
+        <button id="theme-toggle">Toggle Theme</button>
+    </header>
 
+    <main class="main-content">
+        <section class="hero" id="home-module">
+            <div class="hero-text">
+                <span class="eyebrow">Build. Learn. Ship.</span>
+                <h1>Dev-Nexus Coding Playground</h1>
+                <p>Practice code, manage skills, and explore a lightweight sandbox—all inside a responsive developer dashboard.</p>
+                <div class="hero-actions">
+                    <button class="primary-btn" onclick="loadModule('sandbox')">Open Sandbox</button>
+                    <button class="secondary-btn" onclick="loadModule('skills')">Add Skills</button>
+                </div>
+            </div>
+            <div class="hero-panel">
+                <div class="hero-card">
+                    <h2>Live editor preview</h2>
+                    <pre><code>console.log('Welcome to Dev-Nexus');</code></pre>
+                </div>
+            </div>
+        </section>
 
+        <section class="feature-grid">
+            <article class="feature-card" onclick="loadModule('skills')">
+                <h3>Skills Registry</h3>
+                <p>Track your coding abilities and keep a simple skill list for daily practice.</p>
+            </article>
+            <article class="feature-card" onclick="loadModule('vault')">
+                <h3>Code Vault</h3>
+                <p>Store notes, templates, and useful snippets in one place for fast reuse.</p>
+            </article>
+            <article class="feature-card" onclick="loadModule('sandbox')">
+                <h3>Sandbox</h3>
+                <p>Experiment with JavaScript and see quick output directly in the editor.</p>
+            </article>
+        </section>
 
+        <section class="module-panel" id="module-content">
+            <div class="module-card">
+                <h2>Getting Started</h2>
+                <p>Select a module from the navigation bar or the cards above to explore the coding website.</p>
+            </div>
+        </section>
 
+        <section class="editor-container">
+            <div class="editor-header">
+                <div class="traffic-lights">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+            </div>
+            <textarea id="code-editor" spellcheck="false" placeholder="// Type JavaScript here"></textarea>
+            <div class="editor-actions">
+                <button onclick="runCode()" class="run-btn">Run Code</button>
+                <button onclick="clearCode()" class="secondary-btn">Clear</button>
+                <button onclick="toggleEditorTheme()" class="secondary-btn">Toggle Theme</button>
+                <button onclick="loadSample('hello')" class="secondary-btn">Load Sample</button>
+            </div>
+            <pre id="code-output" class="output-panel" aria-live="polite">Output appears here...</pre>
+        </section>
+    </main>
 
-<section class="editor-container">
-    <div class="editor-header">
-        <span class="dot red"></span>
-        <span class="dot yellow"></span>
-        <span class="dot green"></span>
-        <span class="filename">main.py</span>
-    </div>
-    <textarea id="code-editor" spellcheck="false" placeholder="# Write your code here..."></textarea>
-    <button onclick="runCode()" class="run-btn">Run Code</button>
-</section>
-
-
-
-
-
-
-
+    <footer class="site-footer">
+        <p>Dev-Nexus · Static coding website built for practice.</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
-</html> 
+</html>
